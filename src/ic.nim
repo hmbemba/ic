@@ -64,8 +64,8 @@ nim c -r -d:ic -d:ic.show_time=false -d:ic.show_location=false -d:ic.prefix=Test
 ```
 """
 
-import ic/config
-export config
+import ic/config      ; export config
+import ic/checkpoints ; export checkpoints
 
 when defined(nimscript):
   import ic/nimscript_impl
