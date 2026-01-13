@@ -104,12 +104,6 @@ f = Foo(value: 42)
 ic f  # outputs: (value: 42)
 ```
 
-If this conflicts with your own `$` overloads:
-
-```nim
-import ic except `$`
-```
-
 ## License
 
 MIT
