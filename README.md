@@ -7,13 +7,7 @@ Inspired by Python's [icecream](https://github.com/gruns/icecream) library.
 ## Installation
 
 ```bash
-nimble install ic
-```
-
-Or add to your `.nimble` file:
-
-```nim
-requires "ic >= 0.1.0"
+nimble install https://this_github_url
 ```
 
 ## Usage
