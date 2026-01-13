@@ -30,6 +30,7 @@ nim c -r -d:ic -d:ic.show_time=false -d:ic.show_location=true -d:ic.prefix=TestA
 
 nim c -r -d:ic -d:ic.show_time=false -d:ic.show_location=false -d:ic.prefix=TestApp tests/test_ic.nim ; rm tests/test_ic.exe
 
+
 """
 
 suite "ic basic tests":
@@ -93,3 +94,20 @@ suite "ic basic tests":
       check counter > 0
     else:
       check counter == 0
+  
+  test "Checkpoints work":
+    discard """
+    nim c -r -d:cp tests/test_ic.nim ; rm tests/test_ic.exe
+    """
+    blok "Starting block":
+      let x = 5
+      ic x
+
+    blok "Another block":
+      let y = 10
+      icr y
+    
+    cp()  # Simple checkpoint
+
+    echo "checkpoint tests completed."
+    
